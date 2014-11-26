@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="front" namespace="/" extends="struts-default">
+		<action name="login"
+			class="com.apposit.videorental.controller.LoginController">
+			<result name="input">/login.jsp</result>
+			<result type="redirect" name="SUCCESS">/video/list.action</result>
+		</action>
+
+	</package>
+
+	<package name="video" namespace="/video" extends="struts-default">
+		<action name="list"
+			class="com.apposit.videorental.controller.VideoController">
+			<result name="SUCCESS">/jsp/video/list.jsp</result>
+		</action>
+		
+		<action name="detail"
+			class="com.apposit.videorental.controller.VideoController" method="videoDetail">
+			<result name="SUCCESS">/index.jsp</result>
+		</action>
+	</package>
+</struts>
