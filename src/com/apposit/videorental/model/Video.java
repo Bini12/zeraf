@@ -35,4 +35,8 @@ public class Video {
 		this.genre = genre;
 	}
 	
+	@Override
+	public String toString() {
+		return title + " : " + genre + " : " + type;
+	}
 }

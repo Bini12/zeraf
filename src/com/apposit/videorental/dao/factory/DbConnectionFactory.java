@@ -11,16 +11,10 @@ public class DbConnectionFactory {
 		MYSQL, SQLITE, MSSQL;
 	}
 
-	private static DbConnectionFactory instance = null;
+//	private static DbConnectionFactory instance = null;
 	
 	//Hashtable for trade safety
 	private static Hashtable<DBTypes, Database> dbPool = new Hashtable<DBTypes, Database>();
-
-	public DbConnectionFactory getInstance() {
-		if (instance == null)
-			instance = new DbConnectionFactory();
-		return instance;
-	}
 
 	
 	/**
