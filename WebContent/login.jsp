@@ -11,7 +11,7 @@
 <body>
 <h3>Welcome User, please login</h3>
 <s:form action="login">
-    <s:textfield name="user.name" label="User Name"></s:textfield>
+    <s:textfield name="user.name" label="Name"></s:textfield>
     <s:submit value="Login"></s:submit>
 </s:form>
 </body>
