@@ -1,42 +1,75 @@
 package com.apposit.videorental.model;
 
+import com.apposit.videorental.dao.annotation.Column;
+import com.apposit.videorental.dao.annotation.Ref;
+
+
 public class Video {
 	
 	//video title
+	@Column("video_title")
 	private String title;
 	
 	//reference foreign key to type table
-	private int type;
+	@Column("video_type_id")
+	private int type_id;
 	
 	//references foreign key to genere table
-	private int genre;
+	@Column("video_genre_id")
+	private int genre_id;
 
+	@Ref(on="video_genre_id=genre_id", where="")
+	private Genre genre;
+	
 	public String getTitle() {
 		return title;
 	}
+
+
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
+
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public int getType() {
-		return type;
+
+
+	public int getType_id() {
+		return type_id;
 	}
 
-	public void setType(int type) {
-		this.type = type;
+
+
+	public void setType_id(int type_id) {
+		this.type_id = type_id;
 	}
 
-	public int getGenre() {
-		return genre;
+
+
+	public int getGenre_id() {
+		return genre_id;
 	}
 
-	public void setGenre(int genre) {
-		this.genre = genre;
+
+
+	public void setGenre_id(int genre_id) {
+		this.genre_id = genre_id;
 	}
-	
+
+
 	@Override
 	public String toString() {
-		return title + " : " + genre + " : " + type;
+		return title + " : " + genre_id + " : " + type_id;
 	}
 }

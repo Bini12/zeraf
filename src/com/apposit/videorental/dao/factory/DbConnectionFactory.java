@@ -1,9 +1,10 @@
 package com.apposit.videorental.dao.factory;
 
+import java.sql.SQLException;
 import java.util.Hashtable;
 
 import com.apposit.videorental.dao.database.Database;
-import com.apposit.videorental.dao.database.MySql;
+import com.apposit.videorental.dao.database.MySql.MySqlDB;
 
 public class DbConnectionFactory {
 
@@ -19,20 +20,20 @@ public class DbConnectionFactory {
 	
 	/**
 	 * Because creating and estabilishing Database connections is typically expensive
-	 * task we should manage a connection pool using flyweight pattern
+	 * operation we should reuse connection pool using flyweight pattern
 	 * if type of database connection is already estabilished we return the reference 
 	 * without the cost of creating a new one B-)///>
 	 * @param type
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public Database getDatabase(DBTypes type) throws IllegalArgumentException {
+	public Database getDatabase(DBTypes type) throws IllegalArgumentException, SQLException, ClassNotFoundException {
 		Database db = dbPool.get(type);
 		
 		if(db == null) {
 			switch(type) {
 			case MYSQL:
-				db = MySql.getNewInstance();
+				db = MySqlDB.getNewInstance();
 				break;
 			default:
 				throw new IllegalArgumentException("Unsupported database type");
