@@ -1,9 +1,9 @@
-package com.apposit.videorental.dao.database.queryparams;
+package com.apposit.videorental.dao.database.command;
 
-public final class InsertQueryParams implements Params {
+public final class InsertCommand implements Params {
 
 	@Override
-	public InsertQueryParams setTable(String tablename) {
+	public InsertCommand setTable(String tablename) {
 		// TODO Auto-generated method stub
 		return this;
 	}

@@ -1,11 +1,15 @@
 package com.apposit.videorental.model;
 
+import com.apposit.videorental.dao.annotation.Column;
 import com.apposit.videorental.dao.annotation.Table;
 
 @Table(name="genre")
 public class Genre {
 
+	@Column("genre_id")
 	private int id;
+	
+	@Column("genre_title")
 	private String name;
 	
 	public int getId() {

@@ -1,9 +1,12 @@
 package com.apposit.videorental.model;
 
 import com.apposit.videorental.dao.annotation.Column;
+import com.apposit.videorental.dao.annotation.Id;
 import com.apposit.videorental.dao.annotation.Ref;
+import com.apposit.videorental.dao.annotation.Table;
 
 
+@Table(name="video")
 public class Video {
 	
 	//video title
@@ -12,13 +15,14 @@ public class Video {
 	
 	//reference foreign key to type table
 	@Column("video_type_id")
+	@Id
 	private int type_id;
 	
 	//references foreign key to genere table
 	@Column("video_genre_id")
 	private int genre_id;
 
-	@Ref(on="video_genre_id=genre_id", where="")
+	@Ref(on="genre", model="com.apposit.videorental.model.Genre")
 	private Genre genre;
 	
 	public String getTitle() {
@@ -26,11 +30,9 @@ public class Video {
 	}
 
 
-
 	public Genre getGenre() {
 		return genre;
 	}
-
 
 
 	public void setGenre(Genre genre) {
@@ -38,11 +40,9 @@ public class Video {
 	}
 
 
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 
 
 	public int getType_id() {

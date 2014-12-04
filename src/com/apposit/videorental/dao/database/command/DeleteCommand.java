@@ -1,11 +1,10 @@
-package com.apposit.videorental.dao.database.queryparams;
+package com.apposit.videorental.dao.database.command;
 
-public final class UpdateQueryParams implements Params {
+public final class DeleteCommand implements Params {
 
 	@Override
-	public UpdateQueryParams setTable(String tablename) {
+	public DeleteCommand setTable(String tablename) {
 		// TODO Auto-generated method stub
-		
 		return this;
 	}
 
