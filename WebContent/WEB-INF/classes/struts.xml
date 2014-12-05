@@ -6,7 +6,7 @@
 
 	<bean class="com.apposit.videorental.dao.factory.DbConnectionFactory" />
 	<bean class="com.apposit.videorental.service.VideoService" />
-	
+
 	<package name="front" namespace="/" extends="struts-default">
 		
 		<action name="login"
