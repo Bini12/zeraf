@@ -89,16 +89,18 @@ Your Services
   Update a record
   =====
     #Let's assume you already have a model object of type Video called vid
-    
-    vid.setGenreId(5); 
-    #do whatever modifications you like to do
-    db.update(vid);
-    
-    
+		vid.setGenreId(5); 
+		#do whatever modifications you like to do
+		db.update(vid);
+		
+
+ 
 
   Delete a record
   =====
-    db.delete(vid);
+		
+		db.delete(vid);
+		
 
 
 
