@@ -30,7 +30,7 @@ public class DbConnectionFactory {
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public Database getDatabase(DBTypes type, DBConfig dbConfig) throws IllegalArgumentException, SQLException, ClassNotFoundException {
+	public static Database getDatabase(DBTypes type, DBConfig dbConfig) throws IllegalArgumentException, SQLException, ClassNotFoundException {
 		
 		Database db = dbPool.get(dbConfig.toString());
 		
